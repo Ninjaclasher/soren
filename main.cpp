@@ -806,6 +806,7 @@ int main(int argc, char** argv)
 
 	for (auto& scene : cmb.scenes)
 	{
+		try {
 		std::cout << "EVENT " << scene.name << "(";
 
 		for (unsigned i = 0; i < scene.argCnt; ++i)
@@ -863,6 +864,7 @@ int main(int argc, char** argv)
 		}
 
 		std::cout << "}" << std::endl << std::endl;
+		} catch(...) {std::cout << "FAILED " << scene.name << std::endl << "}" << std::endl << std::endl;}
 	}
 
 	return 0;
